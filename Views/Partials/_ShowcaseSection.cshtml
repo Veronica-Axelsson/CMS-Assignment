@@ -1,0 +1,43 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models
+
+<section class="showcase">
+ @*    <img class="background-lines" src="~/images/static/background-effects/background-lines.svg" alt="" /> *@
+
+    <div class="container">
+        <div class="left">
+            <h1 class="title">@Model.Value("showcaseTitle")</h1>
+            <p class="text">@Model.Value("showcaseDescription")</p>
+        
+            <div class="buttons">
+                <a class=" button mobileBtn me-3" href="@Model.Value("showcaseButtonUrl")"> @Model.Value("showcaseButtonText") <i class="fa-regular fa-arrow-up-right" style="color: #191919;"></i></a>
+                <a class=" button mobileBtn me-3" href="/service"> Learn More <i class="fa-regular fa-arrow-up-right" style="color: #191919;"></i></a>
+            </div>
+        </div>
+
+        <div class="image-column">
+
+        @{
+                var showcaseImage = Model.Value<MediaWithCrops>("showcaseImage");
+                if (showcaseImage != null)
+            {
+                    <img src="@showcaseImage.MediaUrl()" alt="@Model.Value("showcaseTitle")" />
+            }
+        }
+
+
+
+
+
+       @*      @{
+                var showcase = Model.Value<IPublishedContent>("");
+                if(showcase != null)
+                {
+                    IPublishedContent showcaseImage = showcase.Value<IPublishedContent>("showcaseImage")!;
+
+                    <img src="@showcaseImage.Url()" alt="@Model.Value("showcaseTitle")">
+                } 
+            } *@
+        </div>
+    </div>
+</section>
