@@ -412,10 +412,8 @@ html, body {
 .features .container .right {
   flex: 1.5;
   margin-top: 2.5rem;
-  
 }
 .features .container .right .umb-block-list {
-  width: 100%;
   display: grid;
   grid-template-columns: 1fr;
   margin-left: 2rem;
@@ -653,25 +651,24 @@ html, body {
 .chooseUs {
   padding-top: 2rem;
   padding-bottom: 4rem;
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
 }
 @media (min-width: 1400px) {
   .chooseUs {
-    padding-top: 4rem;
-    background-image: url("../../images/WhyChooseUs2.jpg");
+    background-image: url("~/images/static/BgChoose.jpg");
     background-repeat: no-repeat;
-    background-position: right bottom;
     height: 100vh;
-    background-size: 50%;
+    background-size: 55%;
+    background-position: right 80%;
   }
+}
+.chooseUs .container {
+  margin-top: 2rem;
 }
 .chooseUs .container .alignLeftRight {
   display: flex;
-  justify-content: baseline;
-}
-.chooseUs .container .alignLeftRight .left .chooseText {
-  width: 85%;
 }
 .chooseUs .container .alignLeftRight .left .chooseText .title {
   font-size: 18px;
@@ -687,22 +684,23 @@ html, body {
 }
 @media (min-width: 1400px) {
   .chooseUs .container .alignLeftRight .left .chooseText .heading {
-    width: 50%;
+    width: 70%;
     font-size: 45px;
     padding-bottom: 1.5rem;
   }
 }
 .chooseUs .container .alignLeftRight .left ._cards {
-  padding: 0rem;
+  padding: 0;
+  margin: 0;
   display: block;
 }
 .chooseUs .container .alignLeftRight .left ._cards ._card {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   max-width: 500px;
   min-width: 300px;
-  padding: 1rem;
+  padding: 1rem 0 0 0;
   margin: 0.5rem;
   background-color: #FFFFFF;
   border: none;
@@ -730,12 +728,12 @@ html, body {
     width: 60px;
   }
 }
-.chooseUs .container .alignLeftRight .left ._cards ._card .cardTitle {
+.chooseUs .container .alignLeftRight .left ._cards ._card .text .cardTitle {
   font-family: "DM Sans", sans-serif;
   font-size: 22px;
   font-weight: 700;
 }
-.chooseUs .container .alignLeftRight .left ._cards ._card .bodyText {
+.chooseUs .container .alignLeftRight .left ._cards ._card .text .bodyText {
   color: #818181;
   margin-top: -10px;
 }
@@ -743,12 +741,25 @@ html, body {
   max-width: 50%;
 }
 .chooseUs .container .alignLeftRight .right .photo {
+  margin-top: 2rem;
   max-width: 1057px;
   height: auto;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+@media (min-width: 1400px) {
+  .chooseUs .container .alignLeftRight .right .photo {
+    padding-top: 0;
+    margin-top: 2rem;
+    max-width: 1057px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .projectCaseStudies {
@@ -1207,7 +1218,7 @@ html, body {
 footer {
   background-color: #191919;
   color: #707070;
-  padding-top: 5rem;
+  padding-top: 6rem;
 }
 footer .container {
   display: block;
