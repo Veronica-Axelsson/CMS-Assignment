@@ -144,7 +144,7 @@ html, body {
 .breadcrumb-section {
   color: #191919;
   background-color: #F0EFE9;
-  background-image: url("/images/background/background-lines.svg");
+  background-image: url("~/images/static/background-lines.svg");
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: left bottom;
@@ -318,7 +318,7 @@ html, body {
 
 .showcase {
   background-color: #F0EFE9;
-  background-image: url("/images/background/background-lines.svg");
+  background-image: url("~/images/static/background-lines.svg");
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: left bottom;
@@ -614,7 +614,7 @@ html, body {
 
 .ourServices {
   background-color: #F0EFE9;
-  background-image: url("/images/background/background-lines-right.svg");
+  background-image: url("~/images/static/background-lines-right.svg");
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: right bottom;
@@ -713,7 +713,7 @@ html, body {
 }
 @media (min-width: 1400px) {
   .chooseUs {
-    background-image: url("../../images/background/BgChoose.jpg");
+    background-image: url("~/images/static/BgChoose.jpg");
     background-repeat: no-repeat;
     background-size: 55%;
     background-position: right bottom 18%;
@@ -1242,7 +1242,7 @@ html, body {
   background-color: #F0EFE9;
   padding-top: 5rem;
   padding-bottom: 4rem;
-  background-image: url("/images/background/background-wavy-lines.svg");
+  background-image: url("~/images/static/background-wavy-lines.svg");
   background-repeat: no-repeat;
   background-size: 15%;
   background-position: right bottom 20px;
@@ -1324,6 +1324,13 @@ footer {
   background-color: #191919;
   color: #707070;
   padding-top: 5rem;
+  background-image: url('~/images/static/background-lines-white-right.svg');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: right bottom 150px;
+  height: auto;
+  width: auto;
+
 }
 footer .background-lines-white-right {
   position: absolute;
