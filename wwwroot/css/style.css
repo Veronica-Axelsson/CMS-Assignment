@@ -1139,6 +1139,8 @@ html, body {
 }
 @media (min-width: 1200px) {
   .articleNews .container .cards {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
   }
@@ -1322,29 +1324,12 @@ footer {
   background-color: #191919;
   color: #707070;
   padding-top: 5rem;
-  background-image: url("/images/background/background-lines-white-right.svg");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: right bottom 150px;
-  height: auto;
-  width: auto;
 }
-@media (min-width: 768px) {
-  footer {
-    background-size: 60%;
-    background-position: right bottom 80px;
-  }
-}
-@media (min-width: 1200px) {
-  footer {
-    background-size: 20%;
-    background-position: right bottom 80px;
-  }
-}
-@media (min-width: 1900px) {
-  footer {
-    background-position: right bottom 80px;
-  }
+footer .background-lines-white-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 footer .container {
   display: block;
@@ -1567,4 +1552,210 @@ footer .footerBottom .bottonAdjust .socials a:hover {
   margin: 0;
   padding: 0;
   border: none;
+}
+
+.articleItemSection {
+  margin-top: 2rem;
+}
+@media (min-width: 1200px) {
+  .articleItemSection {
+    margin-top: 5rem;
+  }
+}
+.articleItemSection .container {
+  display: block;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+  }
+}
+.articleItemSection .container .mainContent {
+  width: 100%;
+  padding-right: 0;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container .mainContent {
+    width: 65%;
+    padding-right: 3rem;
+  }
+}
+.articleItemSection .container .mainContent .metadata {
+  font-family: "DM Sans", sans-serif;
+}
+.articleItemSection .container .mainContent .metadata h2 {
+  font-size: 25px;
+  font-weight: 700;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container .mainContent .metadata h2 {
+    font-size: 45px;
+    width: 100%;
+  }
+}
+.articleItemSection .container .mainContent .metadata .articledetails {
+  display: flex;
+}
+.articleItemSection .container .mainContent .metadata .articledetails span {
+  font-size: 16px;
+  font-weight: 300;
+  color: #707070;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container .mainContent .metadata .articledetails span {
+    font-size: 20px;
+  }
+}
+.articleItemSection .container .mainContent .metadata .articledetails i {
+  font-size: 8px;
+  color: #F9D783;
+  height: 20px;
+  padding: 0 0.5rem;
+  margin-top: 0.5rem;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container .mainContent .metadata .articledetails i {
+    height: 20px;
+    padding: 0 1.5rem;
+    margin-top: 0.5rem;
+  }
+}
+.articleItemSection .container .mainContent .article .content {
+  display: block;
+}
+.articleItemSection .container .mainContent .article .content img {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container .mainContent .article .content img {
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+.articleItemSection .container .mainContent .article .content p {
+  font-family: "Inter", sans-serif;
+  color: #707070;
+}
+.articleItemSection .container .mainContent .article .content .citat {
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  padding: 2rem 0;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container .mainContent .article .content .citat {
+    padding: 4rem 0;
+  }
+}
+.articleItemSection .container .mainContent .article .content .citat img {
+  width: 20px;
+  height: 12px;
+  margin: 0;
+  margin-top: -0.3rem;
+  margin-right: 1rem;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container .mainContent .article .content .citat img {
+    width: 28px;
+    height: 20px;
+    margin-top: -0.3rem;
+    margin-right: 2rem;
+  }
+}
+.articleItemSection .container .mainContent .article .content .citat h2 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+}
+.articleItemSection .container .mainContent .article .content .tags {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.articleItemSection .container .mainContent .article .content .tags span {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  background-color: #F4F4F4;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  margin: 0 0.3rem;
+  margin-bottom: 1rem;
+}
+.articleItemSection .container aside {
+  width: 100%;
+  margin: 0;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container aside {
+    width: 35%;
+    margin-top: -7rem;
+  }
+}
+.articleItemSection .container aside .searchBox {
+  background-color: #F4F4F4;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  margin: 0 0.3rem;
+  margin-bottom: 2.5rem;
+}
+.articleItemSection .container aside .searchBox i {
+  height: 16px;
+  width: 16px;
+  color: #191919;
+}
+.articleItemSection .container aside .searchBox input {
+  border: none;
+  background-color: transparent;
+  color: #8D8D8D;
+}
+.articleItemSection .container aside h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+.articleItemSection .container aside h4 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+.articleItemSection .container aside .borderBottom {
+  border-bottom: 2px solid #191919;
+  width: 10%;
+}
+.articleItemSection .container aside .recentPosts {
+  border: 2px solid #D3D3D3;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container aside .recentPosts {
+    padding: 4rem;
+    margin-bottom: 2.5rem;
+  }
+}
+.articleItemSection .container aside .recentPosts .divider {
+  border-bottom: 1px solid #D8D8D8;
+}
+.articleItemSection .container aside .categories {
+  border: 2px solid #D3D3D3;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 1200px) {
+  .articleItemSection .container aside .categories {
+    padding: 4rem;
+    margin-bottom: 2.5rem;
+  }
+}
+.articleItemSection .container aside .categories span {
+  color: #707070;
 }

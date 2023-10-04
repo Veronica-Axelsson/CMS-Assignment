@@ -1,11 +1,27 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.NewsPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models.PublishedContent;
 @{
-	Layout = "LayoutWithBreadcrumb.cshtml";
-	ViewData["PageTitle"] = @Model.Value("pageTitle");
-	ViewData["PageDescription"] = @Model.Value("pageDescription");
-	ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+    Layout = "LayoutWithBreadcrumb.cshtml";
+    ViewData["PageTitle"] = @Model.Value("pageTitle");
+    ViewData["PageDescription"] = @Model.Value("pageDescription");
+    ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+
+
+    var itemsPerPage = 9;
+    var pageNumber = 1;
+
+    if (!int.TryParse(Context.Request.Query["page"], out pageNumber))
+        pageNumber = 1;
+
+    var selection = Umbraco?.Content(Guid.Parse("9ba69259-d9eb-4897-81a3-2f917d440047"))?
+    .ChildrenOfType("newsItemPage")?
+    .Where(x => x.IsVisible())
+    .OrderBy(x => x.CreateDate).ToList();
+
+    var totalItems = selection?.Count() ?? 0;
+    var pagesItems = selection?.Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage);
 }
 
 <!------ ArticleNews ------>
@@ -16,67 +32,63 @@
                 <div class="heading">Our News & Articles</div>
             </div>
         </div>
-
+        
+        
         <div class="cards">
-            <div class="card">
-                <div class="ImgAndDate ">
-                    <img src="~/images/static/ArticleNews-Classroom.jpg" alt="">
-                    <div class="squareDate">
-                        <p class="dayOfMonth">25</p>
-                        <p class="month">Mar</p>
-                    </div>
-                </div>
-                <div class="text">
-                    <p class="category">Business</p>
-                    <h2 class="header">How To Use Digitalization In The Classroom</h2>
-                    <p class="bodyText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero.</p>
-                </div>
-            </div>
 
+    
+    @if(pagesItems != null)
+    {
+    	@foreach (var item in pagesItems!)
+    	{
+    		var url = item.Url();
+    		var date = item.CreateDate;
+    		var image = item.Value<IPublishedContent>("newsImage");
+    		var category = item.Value("newsCategory");
+    		var title = item.Name();
+    		var preamble = item.Value("newsPreamble");
+    
+    
             <div class="card">
                 <div class="ImgAndDate ">
-                    <img src="~/images/static/ArticleNews-ChatGPT.jpg" alt="">
+                    <img src="@image?.Url()" alt="">
                     <div class="squareDate">
-                        <p class="dayOfMonth">17</p>
-                        <p class="month">Mar</p>
+                        <p class="dayOfMonth">@date.ToString("dd")</p>
+                        <p class="month">@date.ToString("MMM")</p>
                     </div>
                 </div>
                 <div class="text">
-                    <p class="category">Business</p>
-                    <h2 class="header">How To Implement Chat GPT In Your Projects</h2>
-                    <p class="bodyText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero.</p>
+                    <p class="category">@category</p>
+                    <h2 class="header">@title</h2>
+                    <p class="bodyText">@preamble</p>
                 </div>
             </div>
-
-            <div class="card">
-                <div class="ImgAndDate ">
-                    <img src="~/images/static/ArticleNews-GuideDesign.jpg" alt="">
-                    <div class="squareDate">
-                        <p class="dayOfMonth">13</p>
-                        <p class="month">Mar</p>
-                    </div>
-                </div>
-                <div class="text">
-                    <p class="category">Business</p>
-                    <h2 class="header">The Guide To Support Modern CSS Design</h2>
-                    <p class="bodyText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto sed hic libero.</p>
-                </div>
-            </div>
-        </div>
+        } 
+    }
 
         <!-- Pagination -->
         <nav class="item-pagination" aria-label="Page Navigation">
-            <a href="#" class="item-link active">1</a>
-            <a href="#" class="item-link">2</a>
-            <a href="#" class="item-link link-next" aria-label="Next">
-                <span aria-hidden="true"><i class="border fa-sharp fa-solid fa-chevron-rigth"></i></span>
-            </a>
+            @if(pageNumber > 1)
+            {
+                <a href="?page=@(pageNumber - 1)" class="item-link link-prev" aria-label="Previous">
+                    <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                </a>
+            }
+
+            @for (int i = 1; i <= Math.Ceiling((decimal)totalItems / itemsPerPage); i++)
+            {
+                if (i == pageNumber) { <a href="#" class="item-link active">@i</a> } 
+                else { <a href="?page=@i" class="item-link">@i</a> }
+            }
+
+            @if (pageNumber < Math.Ceiling((decimal)totalItems / itemsPerPage))
+            {
+                <a href="?page=@(pageNumber + 1)" class="item-link link-next" aria-label="Next">
+                    <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                </a>
+            }
         </nav>
     </div>
 </section>
-
-
-
-
 
 @await Html.PartialAsync("_Newsletter")

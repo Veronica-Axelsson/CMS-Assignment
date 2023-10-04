@@ -2,8 +2,6 @@
 @using Umbraco.Cms.Core.Models
 
 <section class="showcase">
- @*    <img class="background-lines" src="~/images/static/background-effects/background-lines.svg" alt="" /> *@
-
     <div class="container">
         <div class="left">
             <h1 class="title">@Model.Value("showcaseTitle")</h1>
@@ -16,28 +14,13 @@
         </div>
 
         <div class="image-column">
-
-        @{
-                var showcaseImage = Model.Value<MediaWithCrops>("showcaseImage");
-                if (showcaseImage != null)
-            {
-                    <img src="@showcaseImage.MediaUrl()" alt="@Model.Value("showcaseTitle")" />
-            }
-        }
-
-
-
-
-
-       @*      @{
-                var showcase = Model.Value<IPublishedContent>("");
-                if(showcase != null)
+            @{
+                    var showcaseImage = Model.Value<MediaWithCrops>("showcaseImage");
+                    if (showcaseImage != null)
                 {
-                    IPublishedContent showcaseImage = showcase.Value<IPublishedContent>("showcaseImage")!;
-
-                    <img src="@showcaseImage.Url()" alt="@Model.Value("showcaseTitle")">
-                } 
-            } *@
+                        <img src="@showcaseImage.MediaUrl()" alt="@Model.Value("showcaseTitle")" />
+                }
+            }
         </div>
     </div>
 </section>
