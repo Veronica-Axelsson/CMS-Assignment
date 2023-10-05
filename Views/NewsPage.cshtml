@@ -5,8 +5,9 @@
 @{
     Layout = "LayoutWithBreadcrumb.cshtml";
     ViewData["PageTitle"] = @Model.Value("pageTitle");
-    ViewData["PageDescription"] = @Model.Value("pageDescription");
-    ViewData["PageKeywords"] = @Model.Value("pageKeywords");
+
+    // ViewData["PageDescription"] = @Model.Value("pageDescription");
+    // ViewData["PageKeywords"] = @Model.Value("pageKeywords");
 
 
     var itemsPerPage = 9;
@@ -35,36 +36,35 @@
         
         
         <div class="cards">
+            @if(pagesItems != null)
+            {
+    	        @foreach (var item in pagesItems!)
+    	        {
+    		        var url = item.Url();
+    		        var date = item.CreateDate;
+    		        var image = item.Value<IPublishedContent>("newsImage");
+    		        var category = item.Value("newsCategory");
+    		        var title = item.Name();
+    		        var preamble = item.Value("newsPreamble");
 
     
-    @if(pagesItems != null)
-    {
-    	@foreach (var item in pagesItems!)
-    	{
-    		var url = item.Url();
-    		var date = item.CreateDate;
-    		var image = item.Value<IPublishedContent>("newsImage");
-    		var category = item.Value("newsCategory");
-    		var title = item.Name();
-    		var preamble = item.Value("newsPreamble");
-    
-    
-            <div class="card">
-                <div class="ImgAndDate ">
-                    <img src="@image?.Url()" alt="">
-                    <div class="squareDate">
-                        <p class="dayOfMonth">@date.ToString("dd")</p>
-                        <p class="month">@date.ToString("MMM")</p>
-                    </div>
-                </div>
-                <div class="text">
-                    <p class="category">@category</p>
-                    <h2 class="header">@title</h2>
-                    <p class="bodyText">@preamble</p>
-                </div>
-            </div>
-        } 
-    }
+                    <a href="@url" class="card">
+                        <div class="ImgAndDate ">
+                            <img src="@image?.Url()" alt="">
+                            <div class="squareDate">
+                                <p class="dayOfMonth">@date.ToString("dd")</p>
+                                <p class="month">@date.ToString("MMM")</p>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p class="category">@category</p>
+                            <h2 class="header">@title</h2>
+                            <p class="bodyText">@preamble</p>
+                        </div>
+                    </a>
+                } 
+            }
+        </div>
 
         <!-- Pagination -->
         <nav class="item-pagination" aria-label="Page Navigation">

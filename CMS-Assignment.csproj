@@ -5,6 +5,57 @@
     <Nullable>enable</Nullable>
     <RootNamespace>CMS_Assignment</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="wwwroot\media\01thqjbo\articlenews-chatgpt.jpg" />
+    <Content Include="wwwroot\media\1fjpzryv\articlenews-improveteams.jpg" />
+    <Content Include="wwwroot\media\4mjplv01\divider.png" />
+    <Content Include="wwwroot\media\axxljdtq\articlenews-appleproduct.jpg" />
+    <Content Include="wwwroot\media\b33ep5iq\testimonial-jack.jpg" />
+    <Content Include="wwwroot\media\b3snjbdh\articlenews-guidedesign.jpg" />
+    <Content Include="wwwroot\media\blrn0g1p\linkedin-sales-solutions-pata8xe_ivm-unsplash.jpg" />
+    <Content Include="wwwroot\media\c0phmham\articlenews-5s.jpg" />
+    <Content Include="wwwroot\media\ciwaotgr\whychooseus.jpg" />
+    <Content Include="wwwroot\media\cxsieaej\globalprojects-businessinsight.jpg" />
+    <Content Include="wwwroot\media\daead3yp\aboutcompany2.jpg" />
+    <Content Include="wwwroot\media\driemp0q\daria-pimkina-dj5hnhmtkh0-unsplash.jpg" />
+    <Content Include="wwwroot\media\duzhp4zr\tony-luginsland-odrd-02q6ji-unsplash.jpg" />
+    <Content Include="wwwroot\media\hpgp5cyj\cardline.jpg" />
+    <Content Include="wwwroot\media\ij1hiwtz\teammember-mark.jpg" />
+    <Content Include="wwwroot\media\iwrnqw0a\bgchoose.jpg" />
+    <Content Include="wwwroot\media\k0pppm3d\whychooseus2.jpg" />
+    <Content Include="wwwroot\media\nkxltn1o\quote.png" />
+    <Content Include="wwwroot\media\o1jclxl1\globalprojects-clientswebsite.jpg" />
+    <Content Include="wwwroot\media\okkh1cs3\tony-luginsland-zao0ckz_ikm-unsplash.jpg" />
+    <Content Include="wwwroot\media\pexocj53\articlenews-newheadoffice08.jpg" />
+    <Content Include="wwwroot\media\przjbr0q\jason-goodman-oalh2mojuuk-unsplash.jpg" />
+    <Content Include="wwwroot\media\puwb25xw\teammember-kristine.jpg" />
+    <Content Include="wwwroot\media\q4eh1rjc\articlenews-classroom.jpg" />
+    <Content Include="wwwroot\media\rpudcm0d\articlenews-endusers.jpg" />
+    <Content Include="wwwroot\media\ryjdg5tf\airfocus-um1zvjvctey-unsplash.jpg" />
+    <Content Include="wwwroot\media\t3ppadc2\teammember-justin.jpg" />
+    <Content Include="wwwroot\media\ub0bzipo\aboutcompany.jpg" />
+    <Content Include="wwwroot\media\uyaelsjy\globalprojects-educateemployee.jpg" />
+    <Content Include="wwwroot\media\waqmoakt\christina-wocintechchat-com-0zx1bdv5bny-unsplash.jpg" />
+    <Content Include="wwwroot\media\xbjhnidn\articlenews-businessintelligence.jpg" />
+    <Content Include="wwwroot\media\xjyfc4xv\globalprojects-business.jpg" />
+    <Content Include="wwwroot\media\y2veys24\testimonial-cassandra.jpg" />
+    <Content Include="wwwroot\media\yyfjfut4\teammember-kimberly.jpg" />
+    <Content Include="wwwroot\media\znohaqgt\testimonial-amanda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\media\2bxb2za2\showcase-image.svg" />
+    <None Include="wwwroot\media\4tkpycdq\background-lines-white-right.svg" />
+    <None Include="wwwroot\media\a3kj0cte\paperz.svg" />
+    <None Include="wwwroot\media\bpcdlein\background-wavy-lines.svg" />
+    <None Include="wwwroot\media\dazlghit\logotype-white.svg" />
+    <None Include="wwwroot\media\dqed0yfc\logotype.svg" />
+    <None Include="wwwroot\media\eqrnbnc3\dorfus.svg" />
+    <None Include="wwwroot\media\ijtdi1pj\square.svg" />
+    <None Include="wwwroot\media\m5rbq23a\background-lines.svg" />
+    <None Include="wwwroot\media\pfqpkoqc\gobona.svg" />
+    <None Include="wwwroot\media\poadm2c1\background-lines-right.svg" />
+    <None Include="wwwroot\media\ttud0yeh\martino.svg" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="12.2.0" />
