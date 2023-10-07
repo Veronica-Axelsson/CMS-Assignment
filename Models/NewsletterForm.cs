@@ -2,20 +2,11 @@
 
 namespace CMS_Assignment.Models;
 
-public class ContactForm
+public class NewsletterForm
 {
-    [Required]
-    public string Name { get; set; } = null!;
-
     [Required]
     [EmailAddress]
     public string Email { get; set; } = null!;
 
-    [Required]
-    public string Message { get; set; } = null!;
-
     public string? RedirectUrl { get; set; } = "/";
 }
-
-
-

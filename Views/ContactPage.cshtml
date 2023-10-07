@@ -54,9 +54,9 @@
         {
             <div class="formStyle">
 
-            <div asp-validation-summary="All"></div>
-
-            <input asp-for="@contactForm.Name" type="text" placeholder="Name*">
+            <div class="FormErrorDisplayMessage" asp-validation-summary="All"></div>
+            
+            <input asp-for="@contactForm.Name" type="text" placeholder="Name*" >
             <input asp-for="@contactForm.Email" type="email" placeholder="Email*">
             <textarea asp-for="@contactForm.Message" placeholder="Your Message*"></textarea>
             

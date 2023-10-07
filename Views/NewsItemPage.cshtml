@@ -37,7 +37,7 @@
             <!-- article start -->
             <div class="article">
                 <div class="content">
-                    <img src="@image.Url()" alt="">
+                    <img class="articleImg" src="@image.Url()" alt="">
                     
                     @Model.Value("newsContent")
                    
@@ -107,4 +107,9 @@
     </div>
 </section>
 
-@await Html.PartialAsync("_ArticleNews")
+
+
+<section class="articleNewsColor">
+    @await Html.PartialAsync("_ArticleNews")
+</section>
+

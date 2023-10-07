@@ -50,6 +50,28 @@ namespace CMS_Assignment.Services
 
         }
 
+        public async Task NewsletterSendAsync(string to, string subject)
+        {
+            try
+            {
+                var email = new MimeMessage(to);
+                email.From.Add(MailboxAddress.Parse(_from));
+                email.To.Add(MailboxAddress.Parse(to));
+                email.Subject = subject;
+                
+
+                await _client.ConnectAsync(_smtp, _port, SecureSocketOptions.StartTls);
+                await _client.AuthenticateAsync(_username, _password);
+
+                var result = await _client.SendAsync(email);
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message);
+            }
+
+        }
+
         //private bool _disposed;
 
         public void Dispose()

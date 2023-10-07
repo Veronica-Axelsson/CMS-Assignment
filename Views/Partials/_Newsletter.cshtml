@@ -1,11 +1,31 @@
-﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+﻿@using CMS_Assignment.Models;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
+@{
+    var newsletterForm = new NewsletterForm();
+}
+
+
+<!------ NewsletterForm ------>
 <section class="newsletter">
     <div class="container">
         <h2>Get News Updates By Signup</h2>
-        <div class="textBtn">
-            <p>username@domain.com</p>
-            <button class="btnSubscribe">Subscribe <i class="fa-regular fa-arrow-up-right"></i></button>
-        </div>
+
+        @using (Html.BeginUmbracoForm("index", "Newsletter", FormMethod.Post))
+        {
+            <div class="formStyle">
+
+                <div class="FormErrorDisplayMessage" asp-validation-summary="All"></div>
+
+                <div class="textBtn">
+                    <input asp-for="@newsletterForm.Email" type="email" placeholder="Your email adress..*">
+                    <div class="d-grid">
+                        <button type="submit">Subscribe <i class="fa-solid fa-arrow-up-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </section>

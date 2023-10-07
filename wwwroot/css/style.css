@@ -23,6 +23,7 @@ button:hover {
   background-color: #F0EFE9;
   transition: all 0.25s ease-in-out;
   border-radius: 50px;
+  text-decoration: none;
 }
 .buttonReverse:hover {
   background-color: #F9D783;
@@ -84,6 +85,10 @@ html, body {
 
 .border {
   border: 1px solid red !important;
+}
+
+.FormErrorDisplayMessage {
+  color: red;
 }
 
 .background-lines {
@@ -415,6 +420,7 @@ html, body {
   display: block;
   justify-content: space-evenly;
   border: 3px solid #D3D3D3;
+  padding: 2rem;
 }
 @media (min-width: 1200px) {
   .features .container {
@@ -457,13 +463,14 @@ html, body {
 @media (min-width: 1200px) {
   .features .container .left button {
     width: 350px;
-    margin-bottom: 10rem;
-    margin-top: 1rem;
+    margin-bottom: 7rem;
+    margin-top: 1.5rem;
   }
 }
 .features .container .right {
   flex: 1.5;
   margin-top: 2.5rem;
+  padding-top: 1rem;
 }
 .features .container .right .umb-block-list {
   display: grid;
@@ -769,7 +776,7 @@ html, body {
   color: #191919;
   width: 80px;
   height: 60px;
-  font-size: 40px;
+  font-size: 30px;
   margin-right: 1.3rem;
   border: 2px solid #D3D3D3;
   border-radius: 50%;
@@ -1126,7 +1133,7 @@ html, body {
   }
 }
 .articleNews .container .serviceText .headingButton .placeButton .buttonReverse {
-  background-color: transparent;
+  background-color: #FFFFFF;
   color: #191919;
 }
 .articleNews .container .serviceText .headingButton .placeButton .buttonReverse:hover {
@@ -1150,6 +1157,7 @@ html, body {
 .articleNews .container .cards .card {
   max-width: 420px;
   border: none;
+  text-decoration: none;
 }
 .articleNews .container .cards .card .ImgAndDate {
   position: relative;
@@ -1217,6 +1225,7 @@ html, body {
 .articleNews .item-pagination {
   text-align: center;
   margin-top: 3rem;
+  margin-bottom: 4rem;
 }
 .articleNews .item-pagination .item-link {
   text-decoration: none;
@@ -1238,6 +1247,10 @@ html, body {
 .articleNews .item-pagination .item-link:hover {
   color: #FFFFFF;
   background-color: #191919;
+}
+
+.articleNewsColor {
+  background-color: #F0EFE9;
 }
 
 .newsletter {
@@ -1297,19 +1310,22 @@ html, body {
     display: flex;
   }
 }
-.newsletter .container .textBtn p {
+.newsletter .container .textBtn input {
   background-color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: left;
   padding: 1rem 3rem;
   border-radius: 50px;
+  border: none;
   height: 56px;
+  margin-right: 1rem;
 }
 @media (min-width: 1200px) {
-  .newsletter .container .textBtn p {
+  .newsletter .container .textBtn input {
     margin: 0rem 0rem;
     align-items: center;
+    margin-right: 1rem;
   }
 }
 .newsletter .container .textBtn .btnSubscribe {
@@ -1678,18 +1694,11 @@ footer .footerBottom .bottonAdjust .socials a:hover {
   }
 }
 .articleItemSection .container .mainContent .article .content .citat img {
-  width: 20px;
-  height: 12px;
-  margin: 0;
-  margin-top: -0.3rem;
-  margin-right: 1rem;
+  width: 100%;
 }
 @media (min-width: 1200px) {
   .articleItemSection .container .mainContent .article .content .citat img {
-    width: 28px;
-    height: 20px;
-    margin-top: -0.3rem;
-    margin-right: 2rem;
+    width: 100%;
   }
 }
 .articleItemSection .container .mainContent .article .content .citat h2 {
